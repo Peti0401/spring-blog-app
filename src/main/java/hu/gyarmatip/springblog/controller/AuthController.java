@@ -1,5 +1,6 @@
 package hu.gyarmatip.springblog.controller;
 
+import hu.gyarmatip.springblog.dto.LoginRequest;
 import hu.gyarmatip.springblog.dto.RegisterRequest;
 import hu.gyarmatip.springblog.entity.User;
 import hu.gyarmatip.springblog.service.AuthService;
@@ -25,5 +26,11 @@ public class AuthController {
     public ResponseEntity<User> signUp(@RequestBody RegisterRequest registerRequest) {
         User signedUpUser = authService.signUp(registerRequest);
         return ResponseEntity.ok(signedUpUser);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+        String login = authService.login(loginRequest);
+        return ResponseEntity.ok(login);
     }
 }
