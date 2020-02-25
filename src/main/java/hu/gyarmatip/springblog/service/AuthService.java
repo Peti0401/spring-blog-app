@@ -6,5 +6,5 @@ import hu.gyarmatip.springblog.entity.User;
 public interface AuthService {
 
     User signUp(RegisterRequest registerRequest);
-
+    String encodePassword(String rawPassword);
 }
