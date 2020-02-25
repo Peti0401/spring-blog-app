@@ -1,4 +1,4 @@
-package hu.gyarmatip.springblog.entities;
+package hu.gyarmatip.springblog.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
@@ -31,7 +32,7 @@ public class User {
     private String email;
 
     @OneToMany(mappedBy = "user")
-    private Set<Post> posts;
+    private Set<Post> posts = new HashSet<>();
 
     @Override
     public String toString() {

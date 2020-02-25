@@ -1,4 +1,4 @@
-package hu.gyarmatip.springblog.entities;
+package hu.gyarmatip.springblog.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
